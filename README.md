@@ -38,7 +38,18 @@ Dataset "Financial Sample" (Microsoft), sintético, usado apenas para fins de de
 
 ### Como abrir
 
-Requer o **Power BI Desktop** (versão de setembro/2026 ou mais recente — o arquivo usa o formato de relatório aprimorado / PBIR). Basta abrir `Tabela_Vendas.pbix`.
+Requer o **Power BI Desktop para Windows** (versão de setembro/2026 ou mais recente — o arquivo usa o formato de relatório aprimorado / PBIR). Basta abrir `Tabela_Vendas.pbix` para explorar os dados já importados.
+
+### Como atualizar os dados em outra máquina
+
+As consultas `financials` e `Sheet1` usam o arquivo local `C:\Program Files\Microsoft Power BI Desktop\bin\SampleData\Financial Sample.xlsx`. Se esse caminho não existir na sua instalação, será necessário alterar a fonte antes de atualizar:
+
+1. Baixe o [Financial Sample.xlsx pela página oficial da Microsoft](https://learn.microsoft.com/pt-br/power-bi/create-reports/sample-financial-download) e salve-o em uma pasta local. Preserve a tabela `financials`, a aba `Sheet1` e os nomes das colunas.
+2. No Power BI Desktop, abra **Transformar dados → Configurações da fonte de dados** e selecione a fonte Excel do arquivo atual. Em **Alterar fonte**, escolha o arquivo baixado.
+3. Confira a etapa `Source` nas duas consultas (`financials` e `Sheet1`): ambas devem apontar para o novo caminho. Mantenha as etapas de navegação e de tipos existentes.
+4. Use **Fechar e Aplicar** e depois **Atualizar**. Com a amostra original, as duas consultas devem carregar 700 registros cada.
+
+Abrir o `.pbix` usa os dados já armazenados nele; atualizar os dados requer acesso à fonte Excel.
 
 ---
 
@@ -76,7 +87,18 @@ Microsoft's "Financial Sample" dataset — synthetic, used for demonstration pur
 
 ### How to open
 
-Requires **Power BI Desktop** (September 2026 build or newer — the file uses the enhanced report format / PBIR). Just open `Tabela_Vendas.pbix`.
+Requires **Power BI Desktop for Windows** (September 2026 build or newer — the file uses the enhanced report format / PBIR). Open `Tabela_Vendas.pbix` to explore the already imported data.
+
+### Refreshing data on another machine
+
+The `financials` and `Sheet1` queries use the local file `C:\Program Files\Microsoft Power BI Desktop\bin\SampleData\Financial Sample.xlsx`. If that path does not exist in your installation, change the source before refreshing:
+
+1. Download [Financial Sample.xlsx from Microsoft's official page](https://learn.microsoft.com/en-us/power-bi/create-reports/sample-financial-download) and save it to a local folder. Preserve the `financials` table, the `Sheet1` worksheet and the column names.
+2. In Power BI Desktop, open **Transform data → Data source settings** and select the Excel source for the current file. Use **Change Source** to choose the downloaded workbook.
+3. Check the `Source` step in both queries (`financials` and `Sheet1`): both should point to the new path. Keep the existing navigation and type conversion steps.
+4. Select **Close & Apply**, then **Refresh**. With the original sample, each query should load 700 rows.
+
+Opening the `.pbix` uses its stored data; refreshing requires access to the Excel source.
 
 ---
 
